@@ -1,10 +1,9 @@
 # Library
 
-> One paragraph statement about the project.
+> This project is a mini library where you can add or remove your favorites books and mark them as already read.
 
 ![library](https://user-images.githubusercontent.com/11781597/70094090-5cfdff80-15e7-11ea-997c-4a84490dac64.png)
 
-This project is a mini library where you can add or remove your favorites books and mark them as already read.
 
 ## Built With
 
