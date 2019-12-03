@@ -61,14 +61,13 @@ function addBookToLibrary() {
     title: document.getElementById('title').value,
     author: document.getElementById('author').value,
     pages: document.getElementById('pages').value,
-    read: document.getElementById('already-read').checked
+    read: document.getElementById('already-read').checked,
   };
   const book = new Book(
     formData.title,
     formData.author,
     formData.pages,
-    formData.read
-  );
+    formData.read);
   myLibrary.push(book);
   testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
   testLibrary.push(book);
