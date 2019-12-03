@@ -67,7 +67,8 @@ function addBookToLibrary() {
     formData.title,
     formData.author,
     formData.pages,
-    formData.read);
+    formData.read
+  );
   myLibrary.push(book);
   testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
   testLibrary.push(book);
