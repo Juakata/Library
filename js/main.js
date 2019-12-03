@@ -26,7 +26,7 @@ function render() {
                             <h2><span>Status:</span>${checkRead(book, i)}</h2>
                             <button class="btn delete" id='delete-book${i}'>Delete</button>
                             </div>`;
-    document.getElementById(`delete-book${i}`).addEventListener("click", function(){
+    document.getElementById(`delete-book${i}`).addEventListener('click', () => {
       testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
       testLibrary.splice(i, 1);
       localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
@@ -34,7 +34,7 @@ function render() {
       render();
     });
 
-    document.getElementById(`read-btn${i}`).addEventListener("click", function(){
+    document.getElementById(`read-btn${i}`).addEventListener('click', () => {
       const button = document.getElementById(`read-btn${i}`);
       if (button.innerHTML === "You haven't read this book") {
         button.innerHTML = 'Already read';
