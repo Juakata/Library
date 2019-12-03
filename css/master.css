@@ -33,7 +33,7 @@ body {
   padding: 10px;
 }
 
-.input-cont input{
+.input-cont input {
   border-radius: 5px;
 }
 
@@ -50,4 +50,39 @@ body {
   text-align: center;
   border-radius: 20px;
   box-shadow: 1px 1px 10px black;
+}
+
+.book-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 10px 10px 0 10px;
+}
+
+.book {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px black;
+  padding: 15px;
+}
+
+.btn {
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+}
+
+.delete {
+  background-color: red;
+}
+
+.read {
+  background-color: green;
+}
+
+.not-read {
+  background-color: brown;
 }

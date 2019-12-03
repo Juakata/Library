@@ -1,10 +1,10 @@
 let form = document.getElementById("form");
 
 let myLibrary = [];
-let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+let testLibrary = JSON.parse(localStorage.getItem("testLibrary"));
 
-if(testLibrary == ""){
-  localStorage.setItem('testLibrary', JSON.stringify(myLibrary));
+if (testLibrary == null) {
+  localStorage.setItem("testLibrary", JSON.stringify(myLibrary));
 }
 render();
 
@@ -29,38 +29,40 @@ function addBookToLibrary() {
     formData.read
   );
   myLibrary.push(book);
-  let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+  let testLibrary = JSON.parse(localStorage.getItem("testLibrary"));
   testLibrary.push(book);
-  localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
+  localStorage.setItem("testLibrary", JSON.stringify(testLibrary));
   render();
 }
 
 function removeBook(i) {
-  let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+  let testLibrary = JSON.parse(localStorage.getItem("testLibrary"));
   testLibrary.splice(i, 1);
-  localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
+  localStorage.setItem("testLibrary", JSON.stringify(testLibrary));
   myLibrary.splice(i, 1);
   render();
 }
 
 function checkRead(book, i) {
   if (book.read) {
-    return `<button id='read-btn${i}' onclick='changeStatus(${i})'>Already read</button>`;
+    return `<button class="btn read" id='read-btn${i}' onclick='changeStatus(${i})'>Already read</button>`;
   } else {
-    return `<button id='read-btn${i}' onclick='changeStatus(${i})'>You haven't read this book</button>`;
+    return `<button class="btn not-read" id='read-btn${i}' onclick='changeStatus(${i})'>You haven't read this book</button>`;
   }
 }
 
 function render() {
   let container = document.getElementById("book-cont");
   container.innerHTML = "";
-  let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+  let testLibrary = JSON.parse(localStorage.getItem("testLibrary"));
   testLibrary.forEach((book, i) => {
-    container.innerHTML += `<h1>${book.title}</h1>
+    container.innerHTML += `<div class="book">
+                            <h1>${book.title}</h1>
                             <h2>${book.author}</h2>
                             <h2>${book.pages}</h2>
                             <h2><span>Status:</span>${checkRead(book, i)}</h2>
-                            <button id='delete-book${i}' onclick='removeBook(${i})'>Delete</button>`;
+                            <button class="btn delete" id='delete-book${i}' onclick='removeBook(${i})'>Delete</button>
+                            </div>`;
   });
 }
 
@@ -68,8 +70,10 @@ function changeStatus(i) {
   let button = document.getElementById("read-btn" + i);
   if (button.innerHTML === "You haven't read this book") {
     button.innerHTML = "Already read";
+    button.className = "btn read";
   } else {
     button.innerHTML = "You haven't read this book";
+    button.className = "btn not-read";
   }
 }
 
