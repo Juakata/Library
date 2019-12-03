@@ -73,6 +73,7 @@ body {
   border: none;
   padding: 5px 10px;
   color: white;
+  cursor: pointer;
 }
 
 .delete {
