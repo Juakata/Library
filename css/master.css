@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: grey;
+}
+
+.title-cont {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+#new-book {
+  padding: 5px;
+  background: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+#new-book:hover {
+  background: grey;
+  border: white;
+}
+
+#new-book:active {
+  transform: scale(1.1);
+}
+
+.input-cont {
+  padding: 10px;
+}
+
+.input-cont input{
+  border-radius: 5px;
+}
+
+.form {
+  display: none;
+  background: white;
+  position: fixed;
+  width: 20%;
+  top: 40%;
+  padding: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px black;
+}
