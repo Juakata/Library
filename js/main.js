@@ -1,6 +1,11 @@
 let form = document.getElementById("form");
 
 let myLibrary = [];
+let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+
+if(testLibrary == ""){
+  localStorage.setItem('testLibrary', JSON.stringify(myLibrary));
+}
 render();
 
 function Book(title, author, pages, read) {
@@ -24,10 +29,16 @@ function addBookToLibrary() {
     formData.read
   );
   myLibrary.push(book);
+  let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+  testLibrary.push(book);
+  localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
   render();
 }
 
 function removeBook(i) {
+  let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+  testLibrary.splice(i, 1);
+  localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
   myLibrary.splice(i, 1);
   render();
 }
@@ -43,7 +54,8 @@ function checkRead(book, i) {
 function render() {
   let container = document.getElementById("book-cont");
   container.innerHTML = "";
-  myLibrary.forEach((book, i) => {
+  let testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+  testLibrary.forEach((book, i) => {
     container.innerHTML += `<h1>${book.title}</h1>
                             <h2>${book.author}</h2>
                             <h2>${book.pages}</h2>
