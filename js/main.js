@@ -26,8 +26,24 @@ function render() {
                             <h2><span>Status:</span>${checkRead(book, i)}</h2>
                             <button class="btn delete" id='delete-book${i}'>Delete</button>
                             </div>`;
+    document.getElementById(`delete-book${i}`).addEventListener("click", function(){
+      testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
+      testLibrary.splice(i, 1);
+      localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
+      myLibrary.splice(i, 1);
+      render();
+    });
 
-    document.getElementById(`delete-book${i}`).addEventListener('click', removeBook(i), true);
+    document.getElementById(`read-btn${i}`).addEventListener("click", function(){
+      const button = document.getElementById(`read-btn${i}`);
+      if (button.innerHTML === "You haven't read this book") {
+        button.innerHTML = 'Already read';
+        button.className = 'btn read';
+      } else {
+        button.innerHTML = "You haven't read this book";
+        button.className = 'btn not-read';
+      }
+    });
   });
 }
 
@@ -58,25 +74,6 @@ function addBookToLibrary() {
   testLibrary.push(book);
   localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
   render();
-}
-
-function removeBook(i) {
-  testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
-  testLibrary.splice(i, 1);
-  localStorage.setItem('testLibrary', JSON.stringify(testLibrary));
-  myLibrary.splice(i, 1);
-  render();
-}
-
-function changeStatus(i) {
-  const button = document.getElementById(`read-btn${i}`);
-  if (button.innerHTML === "You haven't read this book") {
-    button.innerHTML = 'Already read';
-    button.className = 'btn read';
-  } else {
-    button.innerHTML = "You haven't read this book";
-    button.className = 'btn not-read';
-  }
 }
 
 function displayForm() {
