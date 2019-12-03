@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Library</title>
+    <link rel="stylesheet" href="css/master.css" />
+  </head>
+  <body>
+    <div class="title-cont">
+      <h1>Library</h1>
+      <button type="button" name="new-book" id="new-book">
+        New Book
+      </button>
+    </div>
+
+    <div class="book-cont" id="book-cont"></div>
+
+    <form class="form" id="form">
+      <div class="input-cont">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" required />
+      </div>
+      <div class="input-cont">
+        <label for="Author">Author</label>
+        <input type="text" name="author" id="author" required />
+      </div>
+      <div class="input-cont">
+        <label for="Pages">pages</label>
+        <input type="number" name="pages" id="pages" required />
+      </div>
+      <div class="input-cont">
+        <label
+          ><input
+            type="radio"
+            name="read"
+            id="already-read"
+            value="already-read"
+          />Read</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="read"
+            id="not-read"
+            value="not-read"
+            checked="checked"
+          />Not Read</label
+        >
+      </div>
+      <div class="input-cont">
+        <button type="button" name="add" id="add">
+          Add
+        </button>
+        <button type="button" name="close" id="close">
+          Close
+        </button>
+      </div>
+    </form>
+
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+</html>
