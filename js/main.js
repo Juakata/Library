@@ -63,7 +63,16 @@ function addBookToLibrary() {
     pages: document.getElementById('pages').value,
     read: document.getElementById('already-read').checked,
   };
+<<<<<<< HEAD
   const book = new Book(formData.title, formData.author, formData.pages, formData.read);
+=======
+  const book = new Book(
+    formData.title,
+    formData.author,
+    formData.pages,
+    formData.read,
+  );
+>>>>>>> a3477e3eff4a88b87e940fd130d0762a53edff6b
   myLibrary.push(book);
   testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
   testLibrary.push(book);
