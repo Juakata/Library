@@ -20,12 +20,14 @@ function render() {
   testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
   testLibrary.forEach((book, i) => {
     container.innerHTML += `<div class="book">
-                            <h1>${book.title}</h1>
-                            <h2>${book.author}</h2>
-                            <h2>${book.pages}</h2>
-                            <h2><span>Status:</span>${checkRead(book, i)}</h2>
+                            <h1><span class="span-side">Title: </span>${book.title}</h1>
+                            <h2><span class="span-side">Author: </span> ${book.author}</h2>
+                            <h2><span class="span-side">Pages: </span>${book.pages}</h2>
+                            <h2><span class="span-side">Status: </span>${checkRead(book, i)}</h2>
                             <button class="btn delete" id='delete-book${i}'>Delete</button>
                             </div>`;
+  });
+  testLibrary.forEach((book, i) => {
     document.getElementById(`delete-book${i}`).addEventListener('click', () => {
       testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
       testLibrary.splice(i, 1);
