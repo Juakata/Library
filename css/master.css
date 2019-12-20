@@ -4,13 +4,6 @@ body {
   background: grey;
 }
 
-.title-cont {
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 5px;
-}
-
 #new-book {
   padding: 5px;
   background: white;
@@ -27,6 +20,25 @@ body {
 
 #new-book:active {
   transform: scale(1.1);
+}
+
+#warning {
+  color: white;
+  background: red;
+  padding: 10px;
+  display: none;
+  border-radius: 10px;
+}
+
+.show-errors input:invalid {
+  border: 2px dotted red;
+}
+
+.title-cont {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
 }
 
 .input-cont {

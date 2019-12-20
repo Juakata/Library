@@ -17,17 +17,18 @@
     <div class="book-cont" id="book-cont"></div>
 
     <form class="form" id="form">
+      <p id='warning'></p>
       <div class="input-cont">
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" required />
       </div>
       <div class="input-cont">
         <label for="author">Author:</label>
-        <input type="text" name="author" id="author" required />
+        <input type="text" name="author" id="author"/>
       </div>
       <div class="input-cont">
         <label for="pages">Pages:</label>
-        <input type="number" name="pages" id="pages" required />
+        <input type="number" name="pages" id="pages" min="5" max="100000" required />
       </div>
       <div class="input-cont">
         <label
