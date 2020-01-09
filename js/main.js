@@ -73,6 +73,7 @@ function addBookToLibrary() {
     document.getElementById('warning').style.display = 'block';
     document.getElementById('warning').innerHTML = document.getElementById('pages').validationMessage;
   } else {
+    document.getElementById('warning').style.display = 'none';
     const book = new Book(formData.title, formData.author, formData.pages, formData.read);
     myLibrary.push(book);
     testLibrary = JSON.parse(localStorage.getItem('testLibrary'));
@@ -88,6 +89,8 @@ function displayForm() {
 
 function closeForm() {
   form.style.display = 'none';
+  document.getElementById('warning').style.display = 'none';
+  document.getElementById('form').className = 'form';
 }
 
 document.getElementById('new-book').addEventListener('click', displayForm);
